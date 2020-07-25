@@ -2,10 +2,6 @@
 
 Anonymous story app
 
-## Building
-
-TODO
-
 ## Using the app
 
-TODO
+    npm start
