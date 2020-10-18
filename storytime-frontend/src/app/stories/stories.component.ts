@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoriesComponent implements OnInit {
 
+  story = 'A really great story';
+
   constructor() { }
 
   ngOnInit(): void {
