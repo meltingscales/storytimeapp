@@ -1,3 +1,13 @@
 <p>stories works!</p>
 
-{{story}}
+<section>
+  <h3>{{ story.title | uppercase }}</h3>
+
+  <aside>
+      <div><span>Story id: {{story.id}}</span></div>
+      <div><span>Story tags: {{story.tags}}</span></div>
+  </aside>
+  <main>
+    {{ story.textContent }}
+  </main>
+</section>
