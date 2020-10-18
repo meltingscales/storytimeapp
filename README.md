@@ -4,7 +4,7 @@ Anonymous story app
 
 ## Using the app
 
-    npm start
+TODO: Separate commands for backend/frontend
 
 ## Guides
 
