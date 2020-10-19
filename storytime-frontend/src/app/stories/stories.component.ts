@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Story } from '../story';
-import {STORIES} from '../mock-stories'
+import { STORIES } from '../mock-stories';
 
 @Component({
   selector: 'app-stories',
@@ -9,6 +9,11 @@ import {STORIES} from '../mock-stories'
 })
 export class StoriesComponent implements OnInit {
   stories = STORIES;
+
+  selectedStory: Story;
+  onSelect(story: Story): void {
+    this.selectedStory = story;
+  }
 
   constructor() {}
 

@@ -1,24 +1,22 @@
 <p>stories works!</p>
 
-<section>
-  <label>
-    title:
-    <input [(ngModel)]="story.title" placeholder="title" />
-  </label>
-</section>
+<div *ngIf="selectedStory">
+  <h2>{{ selectedStory.title }}</h2>
+  <div><span>id: </span>{{ selectedStory.id }}</div>
+  <div>
+    <label
+      >title:
+      <input [(ngModel)]="selectedStory.title" placeholder="title" />
+    </label>
+  </div>
+</div>
 
 <section>
-  <h3>{{ story.title }}</h3>
-
-  <aside>
-    <div>
-      <span>Story id: {{ story.id }}</span>
-    </div>
-    <div>
+  <h2>List of stories</h2>
+  <ul class="stories">
+    <li *ngFor="let story of stories" (click)="onSelect(story)">
+      <span class="badge">{{ story.id }} </span>{{ story.title }}
       <span>Story tags: {{ story.tags }}</span>
-    </div>
-  </aside>
-  <main>
-    {{ story.textContent }}
-  </main>
+    </li>
+  </ul>
 </section>
