@@ -1,13 +1,17 @@
-<div *ngIf="story">
-    <h2>Editing '{{ story.title }}'</h2>
-    <div>
-      <label
-        >id:
-        <input [(ngModel)]="story.id" placeholder="id" />
-      </label>
-      <label
-        >title:
-        <input [(ngModel)]="story.title" placeholder="title" />
-      </label>
-    </div>
-  </div>  
+<div [ngIf]="story">
+  <h2>Editing '{{ story.title }}'</h2>
+  <div>
+    <label
+      >id:
+      <input [(ngModel)]="story.id" placeholder="id" />
+    </label>
+    <label
+      >title:
+      <input [(ngModel)]="story.title" placeholder="title" />
+    </label>
+    <label
+      >text content:
+      <input [(ngModel)]="story.textContent" placeholder="text content"/>
+  </label>
+  </div>
+</div>

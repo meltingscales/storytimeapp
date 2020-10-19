@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Story } from '../story';
-import { STORIES } from '../mock-stories';
+import { StoryService } from '../story.service';
 
 @Component({
   selector: 'app-stories',
@@ -8,14 +8,26 @@ import { STORIES } from '../mock-stories';
   styleUrls: ['./stories.component.css'],
 })
 export class StoriesComponent implements OnInit {
-  stories = STORIES;
+  stories: Story[];
 
   selectedStory: Story;
   onSelect(story: Story): void {
     this.selectedStory = story;
   }
 
-  constructor() {}
+  // note: this is not called in the constructor because the constructor should not really do anything, especially not something that would send an HTTP request.
+  // Instead, this is called in the ngOnInit lifecycle hook because
+  getStories(): void {
+    this.storyService
+      .getStories()
+      .subscribe((stories) => (this.stories = stories));
+  }
 
-  ngOnInit(): void {}
+  // By adding the parameter, it is automatically injected when the app runs.
+  // Holy shit, just like Spring Boot!
+  constructor(private storyService: StoryService) {}
+
+  ngOnInit(): void {
+    this.getStories();
+  }
 }
