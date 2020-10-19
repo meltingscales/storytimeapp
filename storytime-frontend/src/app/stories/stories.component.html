@@ -1,17 +1,3 @@
-<div *ngIf="selectedStory">
-  <h2>Editing '{{ selectedStory.title }}'</h2>
-  <div>
-    <label
-      >id:
-      <input [(ngModel)]="selectedStory.id" placeholder="id" />
-    </label>
-    <label
-      >title:
-      <input [(ngModel)]="selectedStory.title" placeholder="title" />
-    </label>
-  </div>
-</div>
-
 <section>
   <h2>List of stories</h2>
   <ul class="stories">
@@ -23,3 +9,6 @@
     </li>
   </ul>
 </section>
+
+
+<app-story-detail [story]="selectedStory"></app-story-detail>

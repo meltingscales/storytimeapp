@@ -1,1 +1,13 @@
-<p>story-detail works!</p>
+<div *ngIf="story">
+    <h2>Editing '{{ story.title }}'</h2>
+    <div>
+      <label
+        >id:
+        <input [(ngModel)]="story.id" placeholder="id" />
+      </label>
+      <label
+        >title:
+        <input [(ngModel)]="story.title" placeholder="title" />
+      </label>
+    </div>
+  </div>  
