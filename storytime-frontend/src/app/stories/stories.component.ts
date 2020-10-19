@@ -4,7 +4,7 @@ import { Story } from '../story';
 @Component({
   selector: 'app-stories',
   templateUrl: './stories.component.html',
-  styleUrls: ['./stories.component.sass'],
+  styleUrls: ['./stories.component.css'],
 })
 export class StoriesComponent implements OnInit {
   story: Story = {
