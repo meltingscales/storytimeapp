@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Story } from '../story';
+import {STORIES} from '../mock-stories'
 
 @Component({
   selector: 'app-stories',
@@ -7,12 +8,7 @@ import { Story } from '../story';
   styleUrls: ['./stories.component.css'],
 })
 export class StoriesComponent implements OnInit {
-  story: Story = {
-    id: 0,
-    title: "Best Story Ever",
-    textContent: 'Once upon a time...',
-    tags: ['fantasy', 'adventure'],
-  };
+  stories = STORIES;
 
   constructor() {}
 
