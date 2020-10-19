@@ -1,9 +1,10 @@
-<p>stories works!</p>
-
 <div *ngIf="selectedStory">
-  <h2>{{ selectedStory.title }}</h2>
-  <div><span>id: </span>{{ selectedStory.id }}</div>
+  <h2>Editing '{{ selectedStory.title }}'</h2>
   <div>
+    <label
+      >id:
+      <input [(ngModel)]="selectedStory.id" placeholder="id" />
+    </label>
     <label
       >title:
       <input [(ngModel)]="selectedStory.title" placeholder="title" />
@@ -16,7 +17,7 @@
   <ul class="stories">
     <li *ngFor="let story of stories" (click)="onSelect(story)">
       <span class="badge">{{ story.id }} </span>{{ story.title }}
-      <span>Story tags: {{ story.tags }}</span>
+      <!-- <span>Story tags: {{ story.tags }}</span> -->
     </li>
   </ul>
 </section>
