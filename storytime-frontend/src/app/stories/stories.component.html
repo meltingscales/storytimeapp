@@ -15,7 +15,9 @@
 <section>
   <h2>List of stories</h2>
   <ul class="stories">
-    <li *ngFor="let story of stories" (click)="onSelect(story)">
+    <li *ngFor="let story of stories" 
+    [class.selected]="story === selectedStory"
+    (click)="onSelect(story)">
       <span class="badge">{{ story.id }} </span>{{ story.title }}
       <!-- <span>Story tags: {{ story.tags }}</span> -->
     </li>
