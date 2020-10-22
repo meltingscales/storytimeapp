@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Story } from './story';
-import { MessageService } from './message.service';
 import { Observable, of } from 'rxjs';
+
+import { Story } from './story';
 import { STORIES } from './mock-stories';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root',
