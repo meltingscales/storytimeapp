@@ -13,14 +13,16 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     StoriesComponent,
     StoryDetailComponent,
-    MessagesComponent
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    // no need to place any providers due to the `providedIn` flag...
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -14,7 +14,10 @@ export class StoriesComponent implements OnInit {
 
   // By adding the parameter, it is automatically injected when the app runs.
   // Holy shit, just like Spring Boot!
-  constructor(private storyService: StoryService, private messageService: MessageService) {}
+  constructor(
+    private storyService: StoryService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {
     this.getStories();
@@ -22,7 +25,9 @@ export class StoriesComponent implements OnInit {
 
   onSelect(story: Story): void {
     this.selectedStory = story;
-    this.messageService.add(`StoriesComponent: Selected story id='${story.id}', title='${story.title}'`)
+    this.messageService.add(
+      `StoriesComponent: Selected story id='${story.id}', title='${story.title}'`
+    );
   }
 
   // note: this is not called in the constructor because the constructor should not really do anything, especially not something that would send an HTTP request.
@@ -32,5 +37,4 @@ export class StoriesComponent implements OnInit {
       .getStories()
       .subscribe((stories) => (this.stories = stories));
   }
-
 }
